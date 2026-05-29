@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "codex-status-widget"
+version = "0.1.0"
+description = "A desktop traffic-light status widget for Codex."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [
+  { name = "Codex Status Widget contributors" }
+]
+dependencies = [
+  "PySide6>=6.9,<7"
+]
+
+[project.optional-dependencies]
+build = [
+  "pyinstaller>=6.16,<7"
+]
+
+[project.scripts]
+codex-status-widget = "codex_status_widget.app_qt:main"
+
+[project.urls]
+Homepage = "https://github.com/nobody96321/CodexStatusWidget"
+Issues = "https://github.com/nobody96321/CodexStatusWidget/issues"
+Releases = "https://github.com/nobody96321/CodexStatusWidget/releases"
+
+[tool.codex-status-widget]
+app-name = "Codex Status Widget"
+executable-name = "CodexStatusWidget"
+release-version = "0.1.0"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
